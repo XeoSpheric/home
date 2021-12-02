@@ -1,16 +1,33 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+:root {
+  --primary: #4F86C6;
+  --hover: rgba(255, 255, 255, 0.075);
+  --hover-1: rgba(255, 255, 255, 0.15);
+  --hover-2: rgba(255, 255, 255, 0.25);
+  
+  --text-base: var(--white);
+  --text-primary: var(--white);
+  --text-secondary: var(--black);
+  
+  --black: #1a1a1a;
+  --lighter-black: #292929;
+  --lightest-black: #333333;
+  --white: #f1f3f5;
+  --cyan: #22b8cf;
+  --green: #37b679;
+  --red: #da3c3c;
+  --pink: #e64980;
+  --purple: #f81ce5;
+  --blue: #0070f3;
+  --violet: #5f3dc4;
 
-* {
-  box-sizing: border-box;
+  --font-sans: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
+    'Helvetica', sans-serif;
+
+  --header-height: 80px;
+  --vh100-offset: calc(100vh - var(--header-height));
 }
