@@ -7,7 +7,7 @@ const Profile = () => {
 
   return (
     <div>
-      {user?.id}
+      This is Profile
     </div>
   )
 }

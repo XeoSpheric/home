@@ -5,7 +5,7 @@ import { useUser } from 'utils/useUser';
 import { updateUserName } from 'utils/supabase-client';
 import Image from 'next/image';
 import logo from 'assests/Logo.png';
-
+import s from 'styles/Auth.module.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState<string>('');
@@ -47,7 +47,6 @@ const SignIn = () => {
 
   useEffect(() => {
     if (user) {
-      console.log(user.user_metadata, user.email);
       router.replace('/');
     }
   }, [user, router]);
@@ -59,17 +58,17 @@ const SignIn = () => {
           <input
             placeholder="Email"
             type="text"
-            className="sm:py-2 sm:px-2 rounded sm:my-2 bg-black text-white"
+            className={s.inputField}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             placeholder="Password"
             type="password"
-            className="sm:py-2 sm:px-2 rounded sm:my-2 bg-black text-white"
+            className={s.inputField}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            className="bg-black mx-auto transistion-all ease-in-out duration-200 relative w-1/2 text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8"
+            className={s.submitButton}
             type="submit"
             disabled={!password.length || !email.length}
           >
@@ -136,23 +135,23 @@ const SignUp = () => {
           <input
             placeholder="Full Name"
             type="text"
-            className="sm:py-2 sm:px-2 rounded sm:my-2 bg-black text-white"
+            className={s.inputField}
             onChange={(e) => setFullName(e.target.value)}
           />
           <input
             placeholder="Email"
             type="text"
-            className="sm:py-2 sm:px-2 rounded sm:my-2 bg-black text-white"
+            className={s.inputField}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             placeholder="Password"
             type="password"
-            className="sm:py-2 sm:px-2 rounded sm:my-2 bg-black text-white"
+            className={s.inputField}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            className="bg-black mx-auto transistion-all ease-in-out duration-200 relative w-1/2 text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8"
+            className={s.submitButton}
             type="submit"
             disabled={!password.length || !email.length || !fullName.length}
           >
@@ -195,9 +194,7 @@ const Auth = () => {
             type="button"
             onClick={() => setAuthType('signin')}
             className={`${
-              authType === 'signin'
-                ? 'transistion-all ease-in-out duration-200 relative w-1/2 bg-lightBlack shadow-sm text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan hover:ring-opacity-50 hover:z-10 sm:w-auto sm:px-8'
-                : 'transistion-all ease-in-out duration-200 relative w-1/2 bg-transparent shadow-sm text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8'
+              authType === 'signin' ? `${s.active}` : `${s.inactive}`
             }`}
           >
             Sign In
@@ -206,9 +203,7 @@ const Auth = () => {
             type="button"
             onClick={() => setAuthType('signup')}
             className={`${
-              authType === 'signup'
-                ? 'transistion-all ease-in-out duration-200 relative w-1/2 bg-lightBlack shadow-sm text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8'
-                : 'transistion-all ease-in-out duration-200 relative w-1/2 bg-transparent shadow-sm text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8'
+              authType === 'signup' ? `${s.active}` : `${s.inactive}`
             }`}
           >
             Sign Up
