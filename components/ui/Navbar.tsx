@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className="flex flex-1 justify-end space-x-8">
             {user ? (
               <Link href="/profile">
-                <a className={s.link} onClick={() => signOut()}>
+                <a className={s.link}>
                   Profile
                 </a>
               </Link>
