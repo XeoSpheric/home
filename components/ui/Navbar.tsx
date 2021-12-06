@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import s from 'styles/Navbar.module.css';
+import logo from 'assests/logo.png';
 
 import { useUser } from 'utils/useUser';
 
@@ -16,7 +18,13 @@ const Navbar = () => {
           <div className="flex flex-1 items-center">
             <Link href="/">
               <a className={s.logo} aria-label="Logo">
-                xeosmoot.com
+                <Image
+                  src={logo}
+                  alt="xeosmoot.com"
+                  width="30px"
+                  height="30px"
+                  objectFit={'contain'}
+                />
               </a>
             </Link>
             <nav className="space-x-2 ml-6 hidden lg:block">

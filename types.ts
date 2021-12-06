@@ -5,7 +5,6 @@ export interface PageMeta {
 }
 
 export interface UserDetails {
-  id: string /* primary key */;
   full_name?: string;
-  avatar_url?: string;
+  role?: string;
 }

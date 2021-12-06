@@ -49,19 +49,10 @@ const UserContextProvider = (props: any) => {
     };
   }, []);
 
-  const getUserDetails = () =>
-    supabase.from<UserDetails>("users").select("*").single();
-
   useEffect(() => {
     if (user) {
-      Promise.allSettled([getUserDetails()]).then((results) => {
-        const userDetailsPromise = results[0];
-
-        if (userDetailsPromise.status === "fulfilled")
-          setUserDetails(userDetailsPromise.value.data);
-
-        setUserLoaded(true);
-      });
+      setUserDetails({...user.user_metadata.full_name});
+      setUserLoaded(true);
     }
   }, [user]);
 

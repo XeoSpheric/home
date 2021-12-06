@@ -1,17 +1,25 @@
-import { createClient, User } from '@supabase/supabase-js';
-import { UserDetails } from 'types';
+import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
 
-const updateUserName = async (user: User, name: string) => {
-  await supabase
-    .from<UserDetails>('users')
-    .update({
-      full_name: name
-    })
-    .eq('id', user.id);
+const updatePassword = async (password: string) => {
+  await supabase.auth.update({
+    password: password
+  });
 };
 
-export { supabase, updateUserName };
+const updateEmail = async (email: string) => {
+  await supabase.auth.update({
+    email: email
+  });
+};
+
+const updateUserName = async (name: string) => {
+  await supabase.auth.update({
+    data: { full_name: name }
+  });
+};
+
+export { supabase, updateUserName, updateEmail, updatePassword };

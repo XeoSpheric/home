@@ -14,4 +14,12 @@ const getUser = async (token: string) => {
   return data;
 };
 
-export { supabaseAdmin, getUser };
+const resetPass = async (email: string) => {
+  await supabaseAdmin.auth.api.resetPasswordForEmail(email);
+};
+
+const magicLinkLogin = async (email: string) => {
+  await supabaseAdmin.auth.api.generateLink('magiclink', email);
+};
+
+export { supabaseAdmin, getUser, resetPass, magicLinkLogin };
