@@ -1,0 +1,21 @@
+.inputField {
+  @apply py-2 px-2 rounded my-2 bg-black text-white;
+}
+
+.submitButton {
+  @apply bg-black mx-auto transition-all ease-in-out duration-200 relative 
+          text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan 
+          focus:outline-none w-auto px-8 focus:ring-2 focus:ring-cyan focus:ring-opacity-50 focus:z-10;
+}
+
+.active {
+  @apply transition-all ease-in-out duration-200 relative bg-lightBlack shadow-sm
+          text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan 
+          focus:outline-none focus:ring-2 focus:ring-cyan w-auto px-8;
+}
+
+.inactive {
+  @apply transition-all ease-in-out duration-200 relative bg-transparent shadow-sm
+          text-white rounded m-1 py-2 text-sm font-medium whitespace-nowrap hover:bg-cyan
+          focus:outline-none focus:ring-2 focus:ring-cyan w-auto px-8;
+}
