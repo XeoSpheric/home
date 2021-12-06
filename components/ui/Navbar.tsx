@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import s from 'styles/Navbar.module.css';
-import logo from 'assests/logo.png';
+import logo from 'assests/Logo.png';
 
 import { useUser } from 'utils/useUser';
 

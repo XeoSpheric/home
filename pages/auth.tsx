@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useUser } from 'utils/useUser';
 import { updateUserName } from 'utils/supabase-client';
 import Image from 'next/image';
-import logo from 'assests/logo.png';
+import logo from 'assests/Logo.png';
 
 
 const SignIn = () => {
